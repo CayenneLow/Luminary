@@ -1,10 +1,96 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <title> Index </title>
-    </head>
-    <body>
-        {% block body %}
-            <h1> Welcome to Luminary - Crowdfunding built on blockchain </h1>
-        {% endblock %}
+	<head>
+        <meta charset="utf-8" />
+            <title>Luminary - Home</title>
+            <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='css/style.css') }}">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        </head>
+	<body>
+        <div id="header">
+            <ul>
+                <li></li>
+                <li><a class="hvr-underline-from-center" href="/">Home</a></li>
+                <li><a class="hvr-underline-from-center" href="{{ url_for('index') }}">Updates</a></li>
+                <li><a class="hvr-underline-from-center" href="{{ url_for('index') }}">Inventory</a></li>
+                <li><a class="hvr-underline-from-center" href="{{ url_for('index') }}">New Order</a></li>
+            </ul>
+        </div>
+        
+		<div id="home-top-banner">
+			<div class="rounded-box">
+				<h1>Welcome to Luminary</h1>
+				<h2>A crowdfunding platform supported by the power of blockchain </h2>
+			</div>
+        </div>
+
+        <div id="home-secondary-banner">
+				<h1>check out some amazing projects</h1>
+				<h2>and give them your support with <b>trust</b></h2>
+			</div>
+        </div>
+        <div id="home-project-grid">
+			<a href='/project'>
+				<div class="project-grid-item">
+					<img src="https://rednecksandradicals.com/wp-content/uploads/2017/01/Rednecks-and-radicals_Wallet_A.png">
+					<p> Example project </p>
+				</div>
+			</a>
+			<a>
+				<div class="project-grid-item">
+					<img src="https://image.shutterstock.com/image-vector/pink-purple-orange-blue-soft-450w-1296090130.jpg">
+					<p> No link to project </p>
+				</div>
+			</a>
+			<a>
+				<div class="project-grid-item">
+					<img src="https://image.shutterstock.com/image-vector/pink-purple-orange-blue-soft-450w-1296090130.jpg">
+					<p> No link to project </p>
+				</div>
+			</a>
+			<a>
+				<div class="project-grid-item">
+					<img src="https://image.shutterstock.com/image-vector/pink-purple-orange-blue-soft-450w-1296090130.jpg">
+					<p> No link to project </p>
+				</div>
+			</a>
+			<a>
+				<div class="project-grid-item">
+					<img src="https://image.shutterstock.com/image-vector/pink-purple-orange-blue-soft-450w-1296090130.jpg">
+					<p> No link to project </p>
+				</div>
+			</a>
+			<a>
+				<div class="project-grid-item">
+					<img src="https://image.shutterstock.com/image-vector/pink-purple-orange-blue-soft-450w-1296090130.jpg">
+					<p> No link to project </p>
+				</div>
+			</a>
+			<a>
+				<div class="project-grid-item">
+					<img src="https://image.shutterstock.com/image-vector/pink-purple-orange-blue-soft-450w-1296090130.jpg">
+					<p> No link to project </p>
+				</div>
+			</a>
+			<a>
+				<div class="project-grid-item">
+					<img src="https://image.shutterstock.com/image-vector/pink-purple-orange-blue-soft-450w-1296090130.jpg">
+					<p> No link to project </p>
+				</div>
+			</a>
+			<a>
+				<div class="project-grid-item">
+					<img src="https://image.shutterstock.com/image-vector/pink-purple-orange-blue-soft-450w-1296090130.jpg">
+					<p> No link to project </p>
+				</div>
+			</a>
+			<a>
+				<div class="project-grid-item">
+					<img src="https://image.shutterstock.com/image-vector/pink-purple-orange-blue-soft-450w-1296090130.jpg">
+					<p> No link to project </p>
+				</div>
+			</a>
+        </div>
     </body>
 </html>
