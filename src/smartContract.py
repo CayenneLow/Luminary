@@ -1,3 +1,5 @@
+from src.wallet import Wallet
+
 class Contract:
     def __init__(self, moneyExpected, stages):
         self.stages = stages # list of percentages ordered by index
@@ -6,7 +8,12 @@ class Contract:
         self.currentMoney = 0
         self.backers = 0
         self.currentStage = 0
+        self.wallet = Wallet()
 
+    def withdrawMoney(self, money):
+        self.currentMoney -= money
+
+    #walletobj is founder's wallet
     def addMoney(self, money, walletObj):
         self.currentMoney += money
         self.totalMoneyReceived += money

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8" />
+		<title>Contribute</title>
+	</head>
+	<body>
+            {% block body %}
+            <h1> Contribute to Project: {{ project }} </h1>
+            <form method="POST">
+                <label for="money"> Enter amount to withdraw: </label>
+                <input type="number" name="money"></input>
+                <input type="submit" value="Submit"></input>
+            </form>
+            {% endblock %}
+	</body>
+</html>
