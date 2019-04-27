@@ -10,13 +10,11 @@ class Contract:
     def addMoney(self, money, walletObj):
         self.currentMoney += money
         self.totalMoneyReceived += money
-        self.stageMoneyReceived += money
         self.backers += 1
- 		if self.totalMoneyReceived >= self.stages[currentStage]*self.moneyExpected:
- 			self._releaseMoney(self.stages[currentStage]*self.moneyExpected, walletObj)
- 			self.currentStage += 1
-
+        if self.totalMoneyReceived >= self.stages[self.currentStage]*self.moneyExpected:
+            self._releaseMoney(self.stages[self.currentStage]*self.moneyExpected, walletObj)
+            self.currentStage += 1
 
     def _releaseMoney(self, nRelease, walletObj):
-    	self.currentMoney -= self.stages[currentStage]*self.moneyExpected
+    	self.currentMoney -= self.stages[self.currentStage]*self.moneyExpected
     	walletObj.addMoney(nRelease)

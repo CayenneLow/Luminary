@@ -1,8 +1,8 @@
-from blockchain import Block
+from src.blockchain import Block
 
 class Wallet:
     def __init__(self):
-        money = 0
+        self.money = 0
 
     def addMoney(self, money):
         self.money += money
