@@ -26,7 +26,11 @@
                     <div class="w3-grey" style="height:24px;width:{{(contract.totalMoneyReceived / contract.moneyExpected) * 100}}%"></div>
                   </div>
             </div>
+            {% if role == 'user' %}
             <a class="project-donate-but" href="{{ url_for('projectContribute', id=id.id) }}">Donate</a>
+            {% elif role == 'founder' %}
+            <a class="project-donate-but" href="{{ url_for('addTransaction') }}">Add Transaction</a>
+            {% endif %}
         </div>
         <div class="project-block" style="padding:0px; height:400px;">
             <div class="project-goals-title">Our goals</div>
