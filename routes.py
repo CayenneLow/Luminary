@@ -16,9 +16,9 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/founder')
+@app.route('/luminary')
 def founderIndex():
-    return 'Index for Founder'
+    return render_template('project.html', role='founder', id=idObj,blockchain=blockchain, recentDonations=recentDonations[::-1], contract=smartContract)
 
 @app.route('/project/addTransaction', methods=['GET', 'POST'])
 def addTransaction():
@@ -35,7 +35,7 @@ def addTransaction():
 
 @app.route('/project')
 def project():
-    return render_template('project.html', id=idObj,blockchain=blockchain, recentDonations=recentDonations[::-1], contract=smartContract)
+    return render_template('project.html', id=idObj, role='user',blockchain=blockchain, recentDonations=recentDonations[::-1], contract=smartContract)
 
 @app.route('/project/<id>/contribute', methods=['GET', 'POST'])
 def projectContribute(id):
@@ -56,7 +56,7 @@ def projectWithdraw(id):
     print(smartContract.currentMoney)
     return redirect(url_for('project'))
 
-@app.route('/transactions/<id>')
-def transactions(id):
+@app.route('/transactions')
+def transactions():
     # get blockchain
     return render_template('transactions.html', blockchain=blockchain)
