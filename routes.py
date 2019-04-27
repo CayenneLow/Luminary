@@ -17,8 +17,16 @@ def founderIndex():
 def addTransaction():
     if request.method == 'POST':
         # add to blockchain function
+        category = request.form['category'] 
+        amount = request.form['amount'] 
+        sender = "John"
+        receiver = request.form['receiver'] 
+        transactionObj = Transaction(category, amount, sender, receiver)
+        print(transactionObj)
+        newBlock = Block(transactionObj)
+        blockchain.add_block(newBlock)
         return render_template('addTransaction.html')
-    return redirect(url_for('project', id=id))
+    return render_template('addTransaction.html')
 
 @app.route('/project/<id>')
 def project(id):
