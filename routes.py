@@ -9,6 +9,12 @@ def index():
 def founderIndex():
     return 'Index for Founder'
 
+@app.route('/founder/create', methods=['GET', 'POST'])
+    if request.method == 'POST':
+        # add to blockchain function
+        return 'Added to blockchain'
+    return 'Create project for Founder'
+
 @app.route('/project/<id>')
 def project(id):
     return 'Project Page'
