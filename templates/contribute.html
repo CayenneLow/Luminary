@@ -2,16 +2,31 @@
 <html>
 	<head>
         <meta charset="utf-8" />
-		<title>Contribute</title>
+        <title>Contribute</title>
+        <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<body>
-            {% block body %}
-            <h1> Contribute to Project: {{ project }} </h1>
-            <form method="POST">
-                <label for="money"> Enter amount: </label>
+        <div id="header">
+            <ul>
+                <li>Project {{id}}</li>
+                <li><a href="/">Home</a></li>
+                <li><a href="{{ url_for('index') }}">Updates</a></li>
+                <li><a href="{{ url_for('index') }}">Inventory</a></li>
+                <li><a href="{{ url_for('index') }}">New Order</a></li>
+            </ul>
+        </div>
+        <div class="donation-wrap">
+            <div class="donate-box">
+           <center><h1> Contribute to {{ project }}</h1>
+           </center>             <form method="POST">
+                <label for="money"> Enter amount: $</label>
                 <input type="number" name="money"></input>
-                <input type="submit" value="Submit"></input>
+                <input type="submit" class="submit-donate" value="Submit"></input>
             </form>
-            {% endblock %}
+        
+    </div>
+ 
+        </div>
 	</body>
 </html>

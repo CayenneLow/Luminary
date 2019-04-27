@@ -22,7 +22,7 @@
                 <h1>Luminary</h1>
                 <p> hidsadisandkjsandjkaslndsjadsalndka hidsadisandkjsandjkas lndsjadsalndkahidsadisandkjsandjkaslndsjadsal ndkahidsadisandkjsandjkaslndsjadsalndkahidsadisandk jsandjkaslndsjadsalndka dsadasdsadsadsadsa</p>
             </div>
-            <a class="project-donate-but" href="{{url_for('projectContribute', id=id)}}">Donate</a>
+            <a class="project-donate-but" href="{{url_for('projectContribute')}}">Donate</a>
             
         </div>
         <div class="project-block" style="padding:0px; height:400px;">
@@ -67,10 +67,8 @@
                     {% endfor %}
                 </ul>
             </section>
-                <a class="see-more" href="{{url_for('transactions', id=id)}}">See more transactions</a>
-            
+            <a class="see-more" href="{{url_for('transactions', id=id)}}">See more transactions</a>
             </div>
-            
             <div class="project-donations">
                 <div class="title">Recent Donations</div>
                 <ul>
@@ -85,5 +83,4 @@
             </div>
         </div>
     </body>
-
 </html>

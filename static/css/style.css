@@ -62,12 +62,13 @@
     align-items: center;
     color: white;
     align-content: stretch;
-    height: 400px;
+    height: 600px;
 }
 .project-block h1{
     color: #7349E0;
     margin-bottom: 20px;
 }
+
 
 .project-desc {
     color: white;
@@ -199,4 +200,38 @@
     margin-left:0px;
     padding:10px;
     border-bottom:1px solid #7349E0;
+}
+
+.donate-box{
+    border:1px solid #7349E0;
+    padding:20px;
+    font-size:20px;
+}
+.donate-box h1{
+    color:#7349E0;
+    margin-bottom:10px;
+}
+.donate-box input[type=number]{
+    height: 100%;
+    border:none;
+    font-size:20px;
+    color:#7349E0;
+    height:30px;
+    padding:20px;
+}
+.donation-wrap{
+    display:flex;
+    width:100%;
+    min-height:100vh;
+    justify-content:center;
+    align-items: center;
+    align-content: center;
+}
+
+.submit-donate{
+    display:block;
+    background-color:#7349E0;
+    color:white;
+    font-size:20px;
+    border:none;
 }
