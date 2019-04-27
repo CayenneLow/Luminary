@@ -30,15 +30,12 @@ def addTransaction():
         receiver = request.form['receiver']
         transactionObj = Transaction(category, amount, sender, receiver)
         print(transactionObj)
-       # print(walletObj.money)
         walletObj.spendMoney(int(amount), blockchain, transactionObj)
-       # print(walletObj.money)
-        return render_template('addTransaction.html')
-    return render_template('addTransaction.html')
+    return render_template('addTransaction.html', wallet = walletObj)
 
 @app.route('/project')
 def project():
-    return render_template('project.html', id=idObj,blockchain=blockchain, recentDonations=recentDonations[::-1])
+    return render_template('project.html', id=idObj,blockchain=blockchain, recentDonations=recentDonations[::-1], contract=smartContract)
 
 @app.route('/project/<id>/contribute', methods=['GET', 'POST'])
 def projectContribute(id):
