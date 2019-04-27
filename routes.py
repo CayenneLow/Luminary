@@ -1,8 +1,10 @@
 from flask import render_template, request, redirect, url_for, abort
 from server import app
 from src.blockchain import *
+from src.smartContract import *
 
 blockchain = Blockchain()
+smartContract = Contract(12,12)
 
 @app.route('/')
 def index():
@@ -28,9 +30,16 @@ def addTransaction():
         return render_template('addTransaction.html')
     return render_template('addTransaction.html')
 
-@app.route('/project/<id>')
-def project(id):
-    return 'Project Page'
+@app.route('/project/', methods=['GET', 'POST'])
+def project():
+    if request.method == 'POST':
+        money = request.form['money']
+        print(money)
+        print(int(money))
+        smartContract.addMoney(int(money))
+        #print(smartContract.currentMoney)
+        return render_template('project.html')
+    return render_template('project.html')
 
 @app.route('/transactions/<id>')
 def transactions(id):
