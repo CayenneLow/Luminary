@@ -329,3 +329,56 @@ a,a:visited {
 .project-grid-item p {
     text-align:center;
 }
+.transaction-box{
+    border:1px solid #7349E0;
+  
+    font-size:20px;
+}
+
+.transaction-box h1{
+    color:white;
+    font-weight: bold;
+    margin-bottom:10px;
+    padding:20px;
+    display:block;
+    width:100%;
+    background-color:#7349E0;
+
+}
+.transaction-box form{
+    padding:20px 40px;
+}
+.transaction-box h2{
+    font-size:24px;
+    margin-bottom:10px;
+    color:#7349E0;
+    font-weight:bold;
+    
+}
+.transaction-box input[type=number]{
+    height: 100%;
+    border:none;
+    font-size:20px;
+    color:#7349E0;
+    height:30px;
+    padding:20px;
+    border-bottom:1px solid #7349E0;
+}
+.transaction-box input[type=number]:focus{
+    outline:none;
+   
+}
+
+.transaction-box input[type=text]{
+    height: 100%;
+    border:none;
+    font-size:20px;
+    color:#7349E0;
+    height:30px;
+    padding:20px;
+    border-bottom:1px solid #7349E0;
+}
+.transaction-box input[type=text]:focus{
+    outline:none;
+    
+}
