@@ -9,6 +9,7 @@ blockchain = Blockchain()
 smartContract = Contract(30000,[0.2,0.5,1])
 walletObj = Wallet()
 id = ID()
+recentDonations = []
 
 @app.route('/')
 def index():
@@ -42,7 +43,7 @@ def project():
     blockchain.add_block(B1)
     B2 = Block(Transaction("Supplies", 100, "Chloe", "Collins"))
     blockchain.add_block(B2)
-    return render_template('project.html', id=id, blockchain=blockchain)
+    return render_template('project.html', id=id, blockchain=blockchain, recentDonations=recentDonations[::-1])
 
 @app.route('/project/<id>/contribute', methods=['GET', 'POST'])
 def projectContribute(id):
@@ -52,6 +53,7 @@ def projectContribute(id):
         smartContract.addMoney(int(money), walletObj)
         print(smartContract.currentMoney)
         print(walletObj.money)
+        recentDonations.append(money)
         return redirect(url_for('project'))
     return render_template('contribute.html')
 

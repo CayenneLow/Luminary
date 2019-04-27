@@ -11,14 +11,14 @@
             <ul>
                 <li>Project {{id}}</li>
                 <li><a href="/">Home</a></li>
-                <li><a href="{{ url_for('index') }}">Updates</a></li>
-                <li><a href="{{ url_for('index') }}">Inventory</a></li>
+                <li><a href="{{url_for('transactions', id=id)}}">Updates</a></li>
+                <li><a href="{{ url_for('projectContribute', id=id) }}">Inventory</a></li>
                 <li><a href="{{ url_for('index') }}">New Order</a></li>
             </ul>
         </div>
         <div class="donation-wrap">
             <div class="donate-box">
-           <center><h1> Contribute to {{ project }}</h1>
+           <center><h1> Contribute to Luminary</h1>
            </center>             <form method="POST">
                 <label for="money"> Enter amount: $</label>
                 <input type="number" name="money"></input>

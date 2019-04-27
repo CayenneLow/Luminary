@@ -11,10 +11,10 @@
         <div id="header">
             <ul>
                 <li>Project {{id.id}}</li>
-                <li><a href="/">Home</a></li>
-                <li><a href="{{ url_for('index') }}">Updates</a></li>
-                <li><a href="{{ url_for('index') }}">Inventory</a></li>
-                <li><a href="{{ url_for('index') }}">New Order</a></li>
+                <li><a class="hvr-underline-from-center" href="/">Home</a></li>
+                <li><a class="hvr-underline-from-center" href="{{ url_for('index') }}">Updates</a></li>
+                <li><a class="hvr-underline-from-center" href="{{ url_for('index') }}">Inventory</a></li>
+                <li><a class="hvr-underline-from-center" href="{{ url_for('index') }}">New Order</a></li>
             </ul>
         </div>
         <div class="project-block" style="background-image:url({{url_for('static', filename='luminary.png')}})">
@@ -22,7 +22,7 @@
                 <h1>Luminary</h1>
                 <p> hidsadisandkjsandjkaslndsjadsalndka hidsadisandkjsandjkas lndsjadsalndkahidsadisandkjsandjkaslndsjadsal ndkahidsadisandkjsandjkaslndsjadsalndkahidsadisandk jsandjkaslndsjadsalndka dsadasdsadsadsadsa</p>
             </div>
-            <a class="project-donate-but" href="{{url_for('projectContribute')}}">Donate</a>
+            <a class="project-donate-but" href="{{ url_for('projectContribute', id=id) }}">Donate</a>
 
         </div>
         <div class="project-block" style="padding:0px; height:400px;">
@@ -72,11 +72,9 @@
             <div class="project-donations">
                 <div class="title">Recent Donations</div>
                 <ul>
-                    <li>$100<br>
-                        Chloe LI
-                    </li>
-                    <li>$100<br>
-                        Chloe LI
+                    {% for donations in recentDonations%}
+                    <li>${{donations}}<br> Anonymous
+                    {%endfor%}
                     </li>
                 </ul>
 
