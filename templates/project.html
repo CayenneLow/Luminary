@@ -16,9 +16,52 @@
                 <li><a href="{{ url_for('index') }}">New Order</a></li>
             </ul>
         </div>
-	    {% block body %}	
-            <h1> This is the project page for Project {{id}} </h1>
-            <a href="{{url_for('projectContribute', id=id)}}">Contribute</a>
-            {% endblock %}
+        <div class="project-block" style="background-image:url({{url_for('static', filename='luminary.png')}})"> 
+            <div class="project-desc">
+                <h1>Luminary</h1>
+                <p> hidsadisandkjsandjkaslndsjadsalndka hidsadisandkjsandjkaslndsjadsalndkahidsadisandkjsandjkaslndsjadsalndkahidsadisandkjsandjkaslndsjadsalndkahidsadisandkjsandjkaslndsjadsalndka</p>
+            </div>
+            <a class="project-donate-but" href="{{url_for('projectContribute', id=id)}}">Donate</a>
+            
+        </div>
+        <div class="project-block" style="padding:0px; height:300px;">
+            <div class="project-goals-title">Our goals</div>
+            <div class="project-goals">
+                <p>doisahudljsandsaldnsalkd</p>
+                <p>We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things
+                        We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things
+                        </p>
+            </div>
+        </div>
+        <div class="project-trans-wrap">
+            <div class="project-blocks">
+                <ul>
+                    <li>
+                        <div class="item-count">
+                            <b>transactionname</b><br>
+                            date <br>
+                            money<br>
+                            <p><a href="/">see more</a></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-count">
+                            <b>transactionname</b><br>
+                            date <br>
+                            money<br>
+                            <p><a href="/">see more</a></p>
+                        </div>
+                    </li>
+                    
+                </ul>
+            </div>
+            <div class="project-donations">
+                <h1>Recent Donations</h1>
+                <ul>
+                    <li>Chloe Li <br>$100.00</li>
+                </ul>
+            </div>
+        </div>
+
 	</body>
 </html>
