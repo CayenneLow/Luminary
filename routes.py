@@ -1,5 +1,6 @@
 from flask import render_template, request, redirect, url_for, abort
 from server import app
+from src.blockchain import *
 
 @app.route('/')
 def index():
@@ -38,5 +39,6 @@ def projectContribute(id):
 
 @app.route('/transactions/<id>')
 def transactions(id):
+    # get blockchain 
     return 'Transactions page powered by blockchain'
 
