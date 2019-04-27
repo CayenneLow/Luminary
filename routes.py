@@ -12,6 +12,7 @@ def index():
 def founderIndex():
     return 'Index for Founder'
 
+
 @app.route('/project/addTransaction', methods=['GET', 'POST'])
 def addTransaction():
     if request.method == 'POST':
@@ -26,4 +27,6 @@ def project(id):
 @app.route('/transactions/<id>')
 def transactions(id):
     # get blockchain
-    return 'Transactions page powered by blockchain'
+    B1 = Block(Transaction("Utilities", 100, "John", "Collins"))
+    blockchain.add_block(B1)
+    return render_template('transactions.html', blockchain=blockchain)

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8" />
+		<title>Transactions</title>
+	</head>
+	<body>
+	    {% block body %}
+            <h1> Transactions for {{id}} </h1>
+            <table>
+                <tr>
+                    <th> Block Hash </th>
+                    <th> Transaction Details </th>
+                </tr>
+            {% for block in blockchain.blocks %}
+                <tr> 
+                    <td>{{block.hash}}</td>
+                    <td>
+                    <ul>
+                        <li>Timestamp: {{block.timestamp}} </li>  
+                        <li>From: {{block.transaction.sender}} </li>
+                        <li>To: {{block.transaction.receiver}} </li>
+                        <li>Money Spent: ${{block.transaction.amount}} </li>
+                        <li>Category: {{block.transaction.category}} </li>
+                    </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+            </table>
+            {% endblock %}
+	</body>
+</html>
