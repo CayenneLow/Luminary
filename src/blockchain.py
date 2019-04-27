@@ -1,5 +1,5 @@
 import hashlib
-import time
+import datetime
 
 
 # TODO: Sender digitally signs payload. (and recipient too?)
@@ -30,7 +30,7 @@ class Block:
         return hashlib.sha256(bytearray(str(self.prev_hash) + str(self.timestamp) + str(self.transaction.amount), "utf-8")).hexdigest()
 
     def seal(self):
-        self.timestamp = time.time()
+        self.timestamp = datetime.datetime.now()
         self.hash = self.__get_block_hash()
 
     def __repr__(self):

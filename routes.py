@@ -2,6 +2,8 @@ from flask import render_template, request, redirect, url_for, abort
 from server import app
 from src.blockchain import *
 
+blockchain = Blockchain()
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -11,19 +13,12 @@ def index():
 def founderIndex():
     return 'Index for Founder'
 
-@app.route('/founder/create', methods=['GET', 'POST'])
-def founderCreate():
-    if request.method == 'POST':
-        # create a new blockchain for this project
-        return 'created blockchain for project'
-    return 'Create project for Founder'
-
-@app.route('/founder/inputTransaction', methods=['GET', 'POST'])
-def founderInput():
+@app.route('/project/addTransaction', methods=['GET', 'POST'])
+def addTransaction():
     if request.method == 'POST':
         # add to blockchain function
-        return 'Added to blockchain'
-    return 'Inputting new transaction'
+        return render_template('addTransaction.html')
+    return redirect(url_for('project', id=id))
 
 @app.route('/project/<id>')
 def project(id):
@@ -39,6 +34,7 @@ def projectContribute(id):
 
 @app.route('/transactions/<id>')
 def transactions(id):
-    # get blockchain 
-    return 'Transactions page powered by blockchain'
-
+    # get blockchain
+    B1 = Block(Transaction("Utilities", 100, "John", "Collins"))
+    blockchain.add_block(B1)
+    return render_template('transactions.html', blockchain=blockchain)
