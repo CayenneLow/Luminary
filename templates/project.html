@@ -3,8 +3,19 @@
 	<head>
         <meta charset="utf-8" />
             <title>Project {{id}}</title>
+            <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='css/style.css') }}">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<body>
+        <div id="header">
+            <ul>
+                <li>Project {{id}}</li>
+                <li><a href="/">Home</a></li>
+                <li><a href="{{ url_for('index') }}">Updates</a></li>
+                <li><a href="{{ url_for('index') }}">Inventory</a></li>
+                <li><a href="{{ url_for('index') }}">New Order</a></li>
+            </ul>
+        </div>
 	    {% block body %}	
             <h1> This is the project page for Project {{id}} </h1>
             <a href="{{url_for('projectContribute', id=id)}}">Contribute</a>

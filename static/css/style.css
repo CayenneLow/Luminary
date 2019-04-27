@@ -1,0 +1,33 @@
+* {
+    margin:0;
+    box-sizing: border-box;
+}
+#header {
+    height: 80px;
+    background: white;
+    align-items: center;
+    display:flex;
+    justify-content: left;
+    -webkit-box-shadow: 0 8px 6px -6px #ccc;
+    -moz-box-shadow: 0 8px 6px -6px #ccc;
+         box-shadow: 0 8px 6px -6px #ccc;
+}
+
+#header ul {
+    display:flex;
+    color: #6CD35B;
+    font-size: 20px;
+    text-decoration: none;
+    height: 100%;
+    list-style: none;
+    align-items: center;
+    
+}
+
+#header a{
+    display: inline-block;
+    font-weight:bold;
+    color: #6CD35B;
+    text-decoration: none;
+    padding: 20px 40px;
+}
