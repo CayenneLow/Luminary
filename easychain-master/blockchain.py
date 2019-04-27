@@ -5,18 +5,19 @@ import time
 # TODO: Sender digitally signs payload. (and recipient too?)
 class Message:
 
-    def __init__(self, data, sender=None, receiver=None):
+    def __init__(self, amount, category, sender=None, receiver=None):
         self.hash = None
         self.prev_hash = None
         self.timestamp = time.time()
         self.size = len(data.encode('utf-8'))   # length in bytes
         self.sender = sender
         self.receiver = receiver
-        self.data = data
+        self.amount = amount
+        self.category = category
         self.payload_hash = self.__get_payload_hash()
 
     def __get_payload_hash(self):
-        return hashlib.sha256(bytearray(str(self.timestamp) + str(self.data) + str(self.sender) + str(self.receiver), "utf-8")).hexdigest()
+        return hashlib.sha256(bytearray(str(self.timestamp) + str(self.amount) + str(self.category) + str(self.sender) + str(self.receiver), "utf-8")).hexdigest()
 
     def __get_message_hash(self):
         return hashlib.sha256(bytearray(str(self.prev_hash) + self.payload_hash, "utf-8")).hexdigest()
@@ -36,8 +37,8 @@ class Message:
             raise InvalidMessage("Invalid message hash in message: " + str(self))
 
     def __repr__(self):
-        return 'Message<hash: {}, prev_hash: {}, sender: {}, receiver: {}, data: {}>'.format(
-            self.hash, self.prev_hash, self.sender, self.receiver, self.data[:25]
+        return 'Message<hash: {}, prev_hash: {}, sender: {}, receiver: {}, amount: {}, category: {}>'.format(
+            self.hash, self.prev_hash, self.sender, self.receiver, self.amount, self.category[:25]
         )
 
 
@@ -67,14 +68,14 @@ class Block:
     # The block hash only needs to incorporate the head message hash, which then transitively includes all prior hashes.
     def link(self, block):
         self.prev_hash = block.hash
-        
+
     def seal(self):
         self.timestamp = time.time()
         self.hash = self.__get_block_hash()
 
     # Validates each message hash, then chain integrity, then the block hash.
     # Calls each message's validate() method.
-    # If a message fails validation, this method captures the exception and 
+    # If a message fails validation, this method captures the exception and
     # throws InvalidBlock since an invalid message invalidates the whole block.
     def validate(self):
         for i, msg in enumerate(self.messages):
@@ -95,7 +96,7 @@ class Block:
 
 
 class Blockchain:
-    
+
     def __init__(self):
         self.blocks = []
 
