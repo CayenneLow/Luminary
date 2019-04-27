@@ -30,7 +30,11 @@ def addTransaction():
 
 @app.route('/project/<id>')
 def project(id):
-    return render_template('project.html', id=id)
+    B1 = Block(Transaction("Utilities", 100, "John", "Collins"))
+    blockchain.add_block(B1)
+    B2 = Block(Transaction("Supplies", 100, "Chloe", "Collins"))
+    blockchain.add_block(B2)
+    return render_template('project.html', id=id, blockchain=blockchain)
 
 @app.route('/project/<id>/contribute', methods=['GET', 'POST'])
 def projectContribute(id):
