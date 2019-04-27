@@ -19,12 +19,16 @@
         <div class="project-block" style="background-image:url({{url_for('static', filename='luminary.png')}})">
             <div class="project-desc">
                 <h1>Luminary</h1>
-                <p> hidsadisandkjsandjkaslndsjadsalndka hidsadisandkjsandjkas lndsjadsalndkahidsadisandkjsandjkaslndsjadsal ndkahidsadisandkjsandjkaslndsjadsalndkahidsadisandk jsandjkaslndsjadsalndka dsadasdsadsadsadsa</p>
+                <p> We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things</p>
                 <br>
                 <p> Funding: ${{contract.totalMoneyReceived}} / ${{contract.moneyExpected}} </p>
                 <div class="w3-border">
                     <div class="w3-grey" style="height:24px;width:{{(contract.totalMoneyReceived / contract.moneyExpected) * 100}}%"></div>
-                  </div>
+                </div>
+                <br>
+                <p> Round 1: {{contract.stages[0] * 100}}% Funding Unlocked (${{contract.stages[0] * contract.moneyExpected}}0)</p>
+                <p> Round 2: {{contract.stages[1] * 100}}% Funding Unlocked (${{contract.stages[1] * contract.moneyExpected}}0)</p>
+                <p> Round 3: {{contract.stages[2] * 100}}% Funding Unlocked (${{contract.stages[2] * contract.moneyExpected}}.00)</p>
             </div>
             {% if role == 'user' %}
             <a class="project-donate-but" href="{{ url_for('projectContribute', id=id.id) }}">Donate</a>
@@ -35,10 +39,10 @@
         <div class="project-block" style="padding:0px; height:400px;">
             <div class="project-goals-title">Our goals</div>
             <div class="project-goals">
-                <p>doisahudljsandsaldnsalkd</p>
-                <p>We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things
-                        We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things
-                        </p>
+                <p>
+                We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things
+                We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things
+                </p>
             </div>
         </div>
         <div class="project-trans-wrap">
@@ -74,7 +78,7 @@
                     {% endfor %}
                 </ul>
             </section>
-            <a class="see-more" href="{{url_for('transactions', id=id)}}">See more transactions</a>
+            <a class="see-more" href="{{url_for('transactions')}}">See more transactions</a>
             </div>
             <div class="project-donations">
                 <div class="title">Recent Donations</div>
