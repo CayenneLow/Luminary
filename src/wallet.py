@@ -8,6 +8,8 @@ class Wallet:
         self.money += money
 
     def spendMoney(self, money, blockchainObj, transactionObj):
+        if(self.money-money < 0):
+            self.money = 0
         self.money -= money
         # create Block
         block = Block(transactionObj)

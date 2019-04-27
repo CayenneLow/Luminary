@@ -11,6 +11,8 @@ class Contract:
         self.wallet = Wallet()
 
     def withdrawMoney(self, money):
+        if(currentMoney-money < 0):
+            self.currentMoney = 0
         self.currentMoney -= money
 
     #walletobj is founder's wallet
