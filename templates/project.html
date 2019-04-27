@@ -2,7 +2,7 @@
 <html>
 	<head>
         <meta charset="utf-8" />
-            <title>Project</title>
+            <title>Luminary</title>
             <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='css/style.css') }}">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -11,11 +11,9 @@
 	<body>
         <div id="header">
             <ul>
-                <li>Project</li>
+                <li>Luminary</li>
                 <li><a class="hvr-underline-from-center" href="/">Home</a></li>
-                <li><a class="hvr-underline-from-center" href="{{ url_for('index') }}">Updates</a></li>
-                <li><a class="hvr-underline-from-center" href="{{ url_for('index') }}">Inventory</a></li>
-                <li><a class="hvr-underline-from-center" href="{{ url_for('index') }}">New Order</a></li>
+                <li><a class="hvr-underline-from-center" href="{{ url_for('projectWithdraw', id=id.id - 1) }}">Withdraw from Project Luminary</a></li>
             </ul>
         </div>
         <div class="project-block" style="background-image:url({{url_for('static', filename='luminary.png')}})">

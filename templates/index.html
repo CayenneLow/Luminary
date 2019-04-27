@@ -12,10 +12,8 @@
             <ul>
                 <li></li>
                 <li><a class="hvr-underline-from-center" href="/">Home</a></li>
-                <li><a class="hvr-underline-from-center" href="{{ url_for('index') }}">Updates</a></li>
-                <li><a class="hvr-underline-from-center" href="{{ url_for('index') }}">Inventory</a></li>
-                <li><a class="hvr-underline-from-center" href="{{ url_for('index') }}">New Order</a></li>
-            </ul>
+                <li><a class="hvr-underline-from-center" href="{{url_for('founderIndex')}}">Founder View</a></li>
+             </ul>
         </div>
         
 		<div id="home-top-banner">
@@ -33,62 +31,8 @@
         <div id="home-project-grid">
 			<a href='/project'>
 				<div class="project-grid-item">
-					<img src="https://rednecksandradicals.com/wp-content/uploads/2017/01/Rednecks-and-radicals_Wallet_A.png">
-					<p> Example project </p>
-				</div>
-			</a>
-			<a>
-				<div class="project-grid-item">
-					<img src="https://image.shutterstock.com/image-vector/pink-purple-orange-blue-soft-450w-1296090130.jpg">
-					<p> No link to project </p>
-				</div>
-			</a>
-			<a>
-				<div class="project-grid-item">
-					<img src="https://image.shutterstock.com/image-vector/pink-purple-orange-blue-soft-450w-1296090130.jpg">
-					<p> No link to project </p>
-				</div>
-			</a>
-			<a>
-				<div class="project-grid-item">
-					<img src="https://image.shutterstock.com/image-vector/pink-purple-orange-blue-soft-450w-1296090130.jpg">
-					<p> No link to project </p>
-				</div>
-			</a>
-			<a>
-				<div class="project-grid-item">
-					<img src="https://image.shutterstock.com/image-vector/pink-purple-orange-blue-soft-450w-1296090130.jpg">
-					<p> No link to project </p>
-				</div>
-			</a>
-			<a>
-				<div class="project-grid-item">
-					<img src="https://image.shutterstock.com/image-vector/pink-purple-orange-blue-soft-450w-1296090130.jpg">
-					<p> No link to project </p>
-				</div>
-			</a>
-			<a>
-				<div class="project-grid-item">
-					<img src="https://image.shutterstock.com/image-vector/pink-purple-orange-blue-soft-450w-1296090130.jpg">
-					<p> No link to project </p>
-				</div>
-			</a>
-			<a>
-				<div class="project-grid-item">
-					<img src="https://image.shutterstock.com/image-vector/pink-purple-orange-blue-soft-450w-1296090130.jpg">
-					<p> No link to project </p>
-				</div>
-			</a>
-			<a>
-				<div class="project-grid-item">
-					<img src="https://image.shutterstock.com/image-vector/pink-purple-orange-blue-soft-450w-1296090130.jpg">
-					<p> No link to project </p>
-				</div>
-			</a>
-			<a>
-				<div class="project-grid-item">
-					<img src="https://image.shutterstock.com/image-vector/pink-purple-orange-blue-soft-450w-1296090130.jpg">
-					<p> No link to project </p>
+					<img src="{{url_for('static', filename='logo.png')}}">
+					<p> Luminary </p>
 				</div>
 			</a>
         </div>

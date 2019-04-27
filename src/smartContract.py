@@ -10,14 +10,17 @@ class Contract:
         self.currentStage = 0
         self.wallet = Wallet()
 
-    def withdrawMoney(self, money):
-        if(currentMoney-money < 0):
+    def withdrawMoney(self, id, userObj):
+        print(id)
+        money = userObj.invested[id]
+        if(self.currentMoney-money < 0):
             self.currentMoney = 0
         self.currentMoney -= money
+        self.totalMoneyReceived -= money
 
     #walletobj is founder's wallet
     def addMoney(self, money, walletObj):
-        self.currentMoney += money
+        self.currentMoney += money 
         self.totalMoneyReceived += money
         self.backers += 1
         if self.totalMoneyReceived >= self.stages[self.currentStage]*self.moneyExpected:

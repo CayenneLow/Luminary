@@ -2,7 +2,7 @@
 <html>
 	<head>
         <meta charset="utf-8" />
-        <title>Transactions</title>
+        <title>Transactions for Project Luminary</title>
         <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='css/style.css') }}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
@@ -18,7 +18,7 @@
         </div>
         <div id="all-trans-title"><h1>Transaction History</h1></div>
         <div id="all-transactions-wrap">
-            
+
             <table>
                 <tr>
                     <th >Timestamp</th>
@@ -26,11 +26,11 @@
                     <th> Transaction Details </th>
                 </tr>
             {% for block in blockchain.blocks %}
-                <tr> 
+                <tr>
                     <td class="row-1">{{block.timestamp}}</td>
                     <td>{{block.hash}}</td>
                     <td>
-                    <ul> 
+                    <ul>
                         <li>From: {{block.transaction.sender}} </li>
                         <li>To: {{block.transaction.receiver}} </li>
                         <li>Money Spent: ${{block.transaction.amount}} </li>
