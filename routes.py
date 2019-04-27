@@ -23,10 +23,10 @@ def founderIndex():
 def addTransaction():
     if request.method == 'POST':
         # add to blockchain function
-        category = request.form['category'] 
-        amount = request.form['amount'] 
+        category = request.form['category']
+        amount = request.form['amount']
         sender = "John"
-        receiver = request.form['receiver'] 
+        receiver = request.form['receiver']
         transactionObj = Transaction(category, amount, sender, receiver)
         print(transactionObj)
        # print(walletObj.money)
@@ -35,10 +35,14 @@ def addTransaction():
         return render_template('addTransaction.html')
     return render_template('addTransaction.html')
 
-@app.route('/project/', methods=['GET', 'POST'])
+@app.route('/project')
 def project():
     id.createTransaction()
-    return render_template('project.html', id=id)
+    B1 = Block(Transaction("Utilities", 100, "John", "Collins"))
+    blockchain.add_block(B1)
+    B2 = Block(Transaction("Supplies", 100, "Chloe", "Collins"))
+    blockchain.add_block(B2)
+    return render_template('project.html', id=id, blockchain=blockchain)
 
 @app.route('/project/<id>/contribute', methods=['GET', 'POST'])
 def projectContribute(id):

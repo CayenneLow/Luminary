@@ -5,7 +5,8 @@
             <title>Project {{id.id}}</title>
             <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='css/style.css') }}">
             <meta name="viewport" content="width=device-width, initial-scale=1">
-	</head>
+    
+        </head>
 	<body>
         <div id="header">
             <ul>
@@ -19,12 +20,12 @@
         <div class="project-block" style="background-image:url({{url_for('static', filename='luminary.png')}})"> 
             <div class="project-desc">
                 <h1>Luminary</h1>
-                <p> hidsadisandkjsandjkaslndsjadsalndka hidsadisandkjsandjkaslndsjadsalndkahidsadisandkjsandjkaslndsjadsalndkahidsadisandkjsandjkaslndsjadsalndkahidsadisandkjsandjkaslndsjadsalndka</p>
+                <p> hidsadisandkjsandjkaslndsjadsalndka hidsadisandkjsandjkas lndsjadsalndkahidsadisandkjsandjkaslndsjadsal ndkahidsadisandkjsandjkaslndsjadsalndkahidsadisandk jsandjkaslndsjadsalndka dsadasdsadsadsadsa</p>
             </div>
             <a class="project-donate-but" href="{{url_for('projectContribute', id=id.id)}}">Donate</a>
             
         </div>
-        <div class="project-block" style="padding:0px; height:300px;">
+        <div class="project-block" style="padding:0px; height:400px;">
             <div class="project-goals-title">Our goals</div>
             <div class="project-goals">
                 <p>doisahudljsandsaldnsalkd</p>
@@ -35,33 +36,54 @@
         </div>
         <div class="project-trans-wrap">
             <div class="project-blocks">
+            
+                <div class="title">Our Transaction History - Verified by Blockchain technology</div>
+                <section class="flex-parent">
                 <ul>
+                    {% for block in blockchain.blocks %}
+                        {% if loop.index <= 5 %}
                     <li>
                         <div class="item-count">
-                            <b>transactionname</b><br>
-                            date <br>
-                            money<br>
-                            <p><a href="/">see more</a></p>
+                            <b>{{block.transaction.category}}</b><br>
+                            {{block.timestamp}} <br>
+                            ${{block.transaction.amount}}<br>
+                            <a href="#show" class="show">show details</a>
+                            {% if loop.index % 2 == 0 %}
+                            <div class="right-side" id="tab{{loop.index}}" style="margin-top:calc(-120px * {{loop.index}} + 100px);margin-left:-120px"> 
+                                {%else%} 
+                                <div class="right-side" id="tab{{loop.index}}" style="margin-top:calc(-120px * {{loop.index}} + 100px);"> 
+                            {%endif%}
+
+                        
+                                <b>{{block.transaction.category}}</b><br>
+                                {{block.timestamp}} <br>
+                                ${{block.transaction.amount}}<br>
+                                To: {{block.transaction.receiver}} <br>
+                                From: {{block.transaction.sender}} <br>
+                            </div>
                         </div>
                     </li>
-                    <li>
-                        <div class="item-count">
-                            <b>transactionname</b><br>
-                            date <br>
-                            money<br>
-                            <p><a href="/">see more</a></p>
-                        </div>
-                    </li>
-                    
+                    {%endif%}
+                    {% endfor %}
                 </ul>
+            </section>
+                <a class="see-more" href="{{url_for('transactions', id=id)}}">See more transactions</a>
+            
             </div>
+            
             <div class="project-donations">
-                <h1>Recent Donations</h1>
+                <div class="title">Recent Donations</div>
                 <ul>
-                    <li>Chloe Li <br>$100.00</li>
+                    <li>$100<br>
+                        Chloe LI
+                    </li>
+                    <li>$100<br>
+                        Chloe LI
+                    </li>
                 </ul>
+                
             </div>
         </div>
+    </body>
 
-	</body>
 </html>
