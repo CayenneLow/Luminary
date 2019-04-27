@@ -1,8 +1,12 @@
 from flask import render_template, request, redirect, url_for, abort
 from server import app
 from src.blockchain import *
+from src.smartContract import *
+from src.wallet import *
 
 blockchain = Blockchain()
+smartContract = Contract(30000,[0.2,0.5,1])
+walletObj = Wallet()
 
 @app.route('/')
 def index():
@@ -17,10 +21,10 @@ def founderIndex():
 def addTransaction():
     if request.method == 'POST':
         # add to blockchain function
-        category = request.form['category'] 
-        amount = request.form['amount'] 
+        category = request.form['category']
+        amount = request.form['amount']
         sender = "John"
-        receiver = request.form['receiver'] 
+        receiver = request.form['receiver']
         transactionObj = Transaction(category, amount, sender, receiver)
         print(transactionObj)
         newBlock = Block(transactionObj)
@@ -28,7 +32,7 @@ def addTransaction():
         return render_template('addTransaction.html')
     return render_template('addTransaction.html')
 
-@app.route('/project/<id>')
+@app.route('/project')
 def project(id):
     B1 = Block(Transaction("Utilities", 100, "John", "Collins"))
     blockchain.add_block(B1)
@@ -36,13 +40,16 @@ def project(id):
     blockchain.add_block(B2)
     return render_template('project.html', id=id, blockchain=blockchain)
 
-@app.route('/project/<id>/contribute', methods=['GET', 'POST'])
-def projectContribute(id):
+@app.route('/project/contribute', methods=['GET', 'POST'])
+def projectContribute():
     if request.method == "POST":
         money = request.form['money']
         print(f'Contributed ${money}')
-        return redirect(url_for('project', id=id))
-    return render_template('contribute.html', project=id)
+        smartContract.addMoney(int(money), walletObj)
+        print(smartContract.currentMoney)
+        print(walletObj.money)
+        return redirect(url_for('project'))
+    return render_template('contribute.html')
 
 @app.route('/transactions/<id>')
 def transactions(id):
