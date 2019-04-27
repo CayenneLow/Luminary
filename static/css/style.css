@@ -1,33 +1,131 @@
 * {
     margin:0;
     box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
 #header {
     height: 80px;
     background: white;
     align-items: center;
     display:flex;
-    justify-content: left;
+    background-color: #7349E0;
+    justify-content: right;
     -webkit-box-shadow: 0 8px 6px -6px #ccc;
     -moz-box-shadow: 0 8px 6px -6px #ccc;
          box-shadow: 0 8px 6px -6px #ccc;
+
 }
 
 #header ul {
     display:flex;
-    color: #6CD35B;
+    color: white;
     font-size: 20px;
     text-decoration: none;
     height: 100%;
     list-style: none;
     align-items: center;
+    font-weight: bold;
     
 }
 
 #header a{
+    font-weight: normal;
     display: inline-block;
-    font-weight:bold;
-    color: #6CD35B;
+    color: white;
     text-decoration: none;
     padding: 20px 40px;
+}
+
+
+.project-block {
+    border-bottom: 1px solid #646464; 
+    width:100%;
+    padding: 40px;
+    display:flex;
+    align-items: center;
+    color: white;
+    align-content: stretch;
+    height: 400px;
+}
+.project-block h1{
+    color: #7349E0;
+    margin-bottom: 20px;
+}
+
+.project-desc {
+    color: white;
+}
+
+.project-donate-but {
+    background-color: #7349E0;
+    width: 150px;
+    padding:20px;
+    text-align: center;
+    color: white;
+    text-decoration:none;
+    font-weight: bold;
+}
+
+.project-goals {
+    padding: 30px;
+    color: black;
+    font-weight: bold;
+}
+.project-goals-title{
+    background-color:#7349E0;
+    color: white;
+    width: 800px;
+    text-align:center;
+    align-items: center;
+    display:flex;
+    flex-direction: row;
+    height:100%;
+    font-size: 30px;
+    padding: 20px;
+
+}
+
+.project-trans-wrap{
+    width:100%;
+    align-items:stretch;
+    display:flex;
+
+}
+
+.project-blocks {
+    background-color:pink;
+    flex-grow:1;
+    padding: 20px;
+}
+
+.project-blocks ul {
+    list-style-type: none;
+
+}
+.project-blocks li{
+    background: #fff;
+    height: 200px;
+    text-align: center;
+    transform:rotate(45deg);
+    width:200px;
+}
+
+.project-blocks li:nth-child(even) {
+    margin-left:200px;
+}
+
+.item-count {
+    color: #333;
+    display: table-cell;
+    height: 200px;
+    transform: rotate(-45deg);
+    vertical-align: middle;
+      width:200px;
+  }
+
+.project-donations {
+    border-left:1px solid #646464;
+    padding:20px;
+    width:300px;
 }
