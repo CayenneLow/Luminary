@@ -3,12 +3,12 @@ from server import app
 from src.blockchain import *
 from src.smartContract import *
 from src.wallet import *
-from src.ID import *
+from src.User import *
 
 blockchain = Blockchain()
 smartContract = Contract(30000,[0.2,0.5,1])
 walletObj = Wallet()
-idObj = ID()
+idObj = User()
 recentDonations = []
 
 @app.route('/')
@@ -46,19 +46,15 @@ def projectContribute(id):
         print(smartContract.currentMoney)
         print(walletObj.money)
         recentDonations.append(money)
-        idObj.createTransaction()
+        idObj.createTransaction(int(money))
         return redirect(url_for('project'))
     return render_template('contribute.html')
 
 @app.route('/project/<id>/withdraw', methods=['GET', 'POST'])
 def projectWithdraw(id):
-    if request.method == "POST":
-        money = request.form['money']
-        print(f'Withdrew ${money}')
-        smartContract.withdrawMoney(int(money))
-        print(smartContract.currentMoney)
-        return redirect(url_for('project'))
-    return render_template('withdraw.html')
+    smartContract.withdrawMoney(int(id), idObj)
+    print(smartContract.currentMoney)
+    return redirect(url_for('project'))
 
 @app.route('/transactions/<id>')
 def transactions(id):
