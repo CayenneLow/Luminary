@@ -5,27 +5,28 @@
             <title>Luminary - Home</title>
             <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='css/style.css') }}">
             <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
 
         </head>
 	<body>
         <div id="header">
             <ul>
-                <li></li>
+                <li>Luminary</li>
                 <li><a class="hvr-underline-from-center" href="/">Home</a></li>
                 <li><a class="hvr-underline-from-center" href="{{url_for('founderIndex')}}">Founder View</a></li>
              </ul>
         </div>
         
-		<div id="home-top-banner">
-			<div class="rounded-box">
-				<h1>Welcome to Luminary</h1>
-				<h2>A crowdfunding platform supported by the power of blockchain </h2>
-			</div>
+		<div id="home-top-banner" style="background-image:url({{url_for('static', filename='homepage.jpg')}}); background-size: cover; ">
+			
         </div>
-
+        <div class="rounded-box">
+            <h1>Welcome to Luminary</h1>
+            <h2>A crowdfunding platform supported by the power of blockchain </h2>
+        </div>
         <div id="home-secondary-banner">
-				<h1>check out some amazing projects</h1>
-				<h2>and give them your support with <b>trust</b></h2>
+				<h1>check out some amazing projects and give them your support with <b>trust</b> <i class="far fa-handshake"></i>
 			</div>
         </div>
         <div id="home-project-grid">

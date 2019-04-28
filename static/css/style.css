@@ -65,7 +65,7 @@ a,a:visited {
     align-items: center;
     color: white;
     align-content: stretch;
-    height: 600px;
+    height: 300px;
 }
 .project-block h1{
     color: #7349E0;
@@ -76,7 +76,15 @@ a,a:visited {
 .project-desc {
     color: white;
 }
-
+.project-desc h1{
+    color: white;
+    background-color:#7349E0;
+    font-size: 40px;
+    display:inline-block;
+    padding: 10px 20px;
+    text-align:center;
+    line-height: 50px;
+}
 .project-donate-but {
     background-color: #7349E0;
     width: 150px;
@@ -85,6 +93,7 @@ a,a:visited {
     color: white;
     text-decoration:none;
     font-weight: bold;
+    margin:200px;
 }
 
 .project-goals {
@@ -95,7 +104,7 @@ a,a:visited {
 .project-goals-title{
     background-color:#7349E0;
     color: white;
-    width: 800px;
+    width: 200px;
     text-align:center;
     align-items: center;
     display:flex;
@@ -310,38 +319,48 @@ border:1px solid #a6d4c6;
     position: relative;
     padding: 40px 12px 60px;
     width: 100%;
+    height: 100vh;
+    -webkit-filter: brightness(60%)
 }
 
 
-  #home-top-banner .rounded-box {
+   .rounded-box {
     border: 3px solid #7349E0;
     border-radius: 15px;
     width: 600px;
-    position: relative;
-    margin-top: 110px;
-    margin-left: 45px;
+    position:absolute;
+    top: 180px;
+    left: 45px;
     padding:20px;
   }
-  #home-top-banner h1 {
-    color: #7349E0;
+  .rounded-box h1 {
+    color: white;
+    background-color:#7349E0;
+    font-size: 40px;
+    padding: 20px 40px;
+    text-align:center;
     line-height: 50px;
   }
-  #home-top-banner h2 {
-    color: #7349E0;
+  .rounded-box h2 {
+    color: white;
     line-height: 30px;
+    padding: 20px 10px;
   }
   #home-secondary-banner {
     position: relative;
-    padding: 40px 0 40px 40px;
-    font-size: 30px;
+    padding: 20px;;
+    font-size: 24px;
     text-align: left;
     line-height: 70px;
     background-color: #7349E0;
-    opacity: .5;
+    opacity: .8;
+    text-align:center;
 }
 #home-secondary-banner h1,h2 {
     opacity: 1;
+    font-size:24px;
     color: white;
+    font-weight:normal;s
 }
 #home-project-grid {
     padding-top: 40px;
@@ -351,6 +370,7 @@ border:1px solid #a6d4c6;
     display: inline-block;
     width: 33%;
     padding-bottom: 40px;
+    
 }
 .project-grid-item img {
     padding: 5%;

@@ -16,40 +16,59 @@
                 <li><a class="hvr-underline-from-center" href="{{ url_for('projectWithdraw', id=id.id - 1) }}">Withdraw from Project Luminary</a></li>
             </ul>
         </div>
-        <div class="project-block" style="background-image:url({{url_for('static', filename='luminary.png')}})">
+        <div class="project-block" style="height:100vh;background-image:url({{url_for('static', filename='luminary.png')}})">
             <div class="project-desc">
                 <h1>Luminary</h1>
                 <p> We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things</p>
                 <br>
                 <p> Funding: ${{contract.totalMoneyReceived}} / ${{contract.moneyExpected}} </p>
-                <div class="w3-border">
-                    <div class="w3-grey" style="height:24px;width:{{(contract.totalMoneyReceived / contract.moneyExpected) * 100}}%"></div>
+                <div class="w3-border" style="border:none !important;background-color: #FF6464;">
+                    <div class="w3-green" style="height:24px;width:{{(contract.totalMoneyReceived / contract.moneyExpected) * 100}}%"></div>
+                      
                 </div>
+                <div class="w3-border" style="border:none !important; background-color:#E76E03  ">
+                    <div class="w3-container w3-green" style="width:40%; height:20px; padding-left:0px; background-color:#FC8720  !important "><div class="w3-container w3-red" style="width:40%; background-color:#FC9F4C   !important; height:20px;">
+                        </div> 
+                    </div> 
+                </div>
+                 
+
+                    
                 <br>
                 <p> Round 1: {{contract.stages[0] * 100}}% Funding Unlocked (${{contract.stages[0] * contract.moneyExpected}}0)</p>
                 <p> Round 2: {{contract.stages[1] * 100}}% Funding Unlocked (${{contract.stages[1] * contract.moneyExpected}}0)</p>
                 <p> Round 3: {{contract.stages[2] * 100}}% Funding Unlocked (${{contract.stages[2] * contract.moneyExpected}}.00)</p>
             </div>
-            {% if role == 'user' %}
-            <a class="project-donate-but" href="{{ url_for('projectContribute', id=id.id) }}">Donate</a>
-            {% elif role == 'founder' %}
-            <a class="project-donate-but" href="{{ url_for('addTransaction') }}">Add Transaction</a>
-            {% endif %}
-        </div>
+            
+                {% if role == 'user' %}
+                <a class="project-donate-but" href="{{ url_for('projectContribute', id=id.id) }}">Donate</a>
+                {% elif role == 'founder' %}
+                <a class="project-donate-but" href="{{ url_for('addTransaction') }}">Add Transaction</a>
+                {% endif %}
+            </div>
         <div class="project-block" style="padding:0px; height:400px;">
-            <div class="project-goals-title">Our goals</div>
+            <div class="project-goals-title">Our Goal</div>
             <div class="project-goals">
                 <p>
-                We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things
-                We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things
+                    To create a platform where investors can see where their money goes
                 </p>
+                <p>
+                    To help investors hold project owners accountable to spending their funds right
+                </p>
+                <p>One of the most iconic scandals in recent years have been kickstarters spending their funds incorrectly.
+
+
+
+                    Over $720,000 USD disappearing overnight
+                    
+                    </p>
             </div>
         </div>
         <div class="project-trans-wrap">
             <div class="project-blocks">
 
                 <div class="title">Our Transaction History - Verified by Blockchain technology</div>
-                <section class="flex-parent">
+                <section class="flex-parent" style="min-height:600px">
                 <ul>
                     {% for block in blockchain.blocks %}
                         {% if loop.index <= 5 %}
