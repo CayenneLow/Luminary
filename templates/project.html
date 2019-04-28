@@ -21,7 +21,7 @@
                 <h1>Luminary</h1>
                 <p> We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things We want money to do a lot of things and buy things</p>
                 <br>
-                <p> Funding: ${{contract.totalMoneyReceived}} / ${{contract.moneyExpected}} </p>
+                <h3><p> Funding: ${{contract.totalMoneyReceived}} / ${{contract.moneyExpected}} </p></h3>
                 <div class="w3-border" style="border:none !important;background-color: #EDEDED;">
                     <div class="w3-green" style="height:24px;width:{{(contract.totalMoneyReceived / contract.moneyExpected) * 100}}%"></div>
                       
@@ -36,9 +36,11 @@
 
                     
                 <br>
+                <h3>
                 <p> Round 1: {{contract.stages[0] * 100}}% Funding Unlocked (${{contract.stages[0] * contract.moneyExpected}}0)</p>
                 <p> Round 2: {{contract.stages[1] * 100}}% Funding Unlocked (${{contract.stages[1] * contract.moneyExpected}}0)</p>
                 <p> Round 3: {{contract.stages[2] * 100}}% Funding Unlocked (${{contract.stages[2] * contract.moneyExpected}}.00)</p>
+                </h3>
             </div>
             
                 {% if role == 'user' %}
