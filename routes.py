@@ -56,7 +56,7 @@ def projectWithdraw(id):
     print(smartContract.currentMoney)
     return redirect(url_for('project'))
 
-@app.route('/transactions/<id>')
-def transactions(id):
+@app.route('/transactions/')
+def transactions():
     # get blockchain
     return render_template('transactions.html', blockchain=blockchain)

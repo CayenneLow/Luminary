@@ -9,11 +9,9 @@
 	<body>
         <div id="header">
             <ul>
-                <li>Project {{id}}</li>
+                <li>Luminary</li>
                 <li><a href="/">Home</a></li>
-                <li><a href="{{url_for('transactions', id=id)}}">Updates</a></li>
-                <li><a href="{{ url_for('projectContribute', id=id) }}">Inventory</a></li>
-                <li><a href="{{ url_for('index') }}">New Order</a></li>
+                <li><a href="{{url_for('project')}}">Back</a></li>
             </ul>
         </div>
         <div id="all-trans-title"><h1>Transaction History</h1></div>
