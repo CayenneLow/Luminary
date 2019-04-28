@@ -2,22 +2,35 @@
 <html>
 	<head>
         <meta charset="utf-8" />
-		<title>Transactions for Luminary Project</title>
+        <title>Transactions for Project Luminary</title>
+        <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<body>
-	    {% block body %}
-            <h1> Transactions</h1>
+        <div id="header">
+            <ul>
+                <li>Project {{id}}</li>
+                <li><a href="/">Home</a></li>
+                <li><a href="{{url_for('transactions', id=id)}}">Updates</a></li>
+                <li><a href="{{ url_for('projectContribute', id=id) }}">Inventory</a></li>
+                <li><a href="{{ url_for('index') }}">New Order</a></li>
+            </ul>
+        </div>
+        <div id="all-trans-title"><h1>Transaction History</h1></div>
+        <div id="all-transactions-wrap">
+
             <table>
                 <tr>
+                    <th >Timestamp</th>
                     <th> Block Hash </th>
                     <th> Transaction Details </th>
                 </tr>
             {% for block in blockchain.blocks %}
-                <tr> 
+                <tr>
+                    <td class="row-1">{{block.timestamp}}</td>
                     <td>{{block.hash}}</td>
                     <td>
                     <ul>
-                        <li>Timestamp: {{block.timestamp}} </li>  
                         <li>From: {{block.transaction.sender}} </li>
                         <li>To: {{block.transaction.receiver}} </li>
                         <li>Money Spent: ${{block.transaction.amount}} </li>
@@ -27,6 +40,7 @@
                 </tr>
             {% endfor %}
             </table>
-            {% endblock %}
+
+        </div>
 	</body>
 </html>

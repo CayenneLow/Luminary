@@ -49,24 +49,30 @@
                 <ul>
                     {% for block in blockchain.blocks %}
                         {% if loop.index <= 5 %}
-                    <li>
+                    <li class="hvr-grow-shadow">
                         <div class="item-count">
+                            <a href="#show" class="show">
                             <b>{{block.transaction.category}}</b><br>
                             {{block.timestamp}} <br>
                             ${{block.transaction.amount}}<br>
-                            <a href="#show" class="show">show details</a>
+                            </a>
                             {% if loop.index % 2 == 0 %}
                             <div class="right-side" id="tab{{loop.index}}" style="margin-top:calc(-120px * {{loop.index}} + 100px);margin-left:-120px">
                                 {%else%}
                                 <div class="right-side" id="tab{{loop.index}}" style="margin-top:calc(-120px * {{loop.index}} + 100px);">
                             {%endif%}
-
-
                                 <b>{{block.transaction.category}}</b><br>
                                 {{block.timestamp}} <br>
                                 ${{block.transaction.amount}}<br>
                                 To: {{block.transaction.receiver}} <br>
                                 From: {{block.transaction.sender}} <br>
+                            
+
+                            <a href="#img1">
+                                <img src="{{url_for('static', filename='receipt.png')}}" class="thumbnail">
+                            </a>
+                                      
+                                      <!-- lightbox container hidden with CSS -->
                             </div>
                         </div>
                     </li>
@@ -87,5 +93,8 @@
 
             </div>
         </div>
+        <a href="#_" class="lightbox" id="img1">
+                <img src="{{url_for('static', filename='receipt.png')}}" class="thumbnail">
+              </a>
     </body>
 </html>
