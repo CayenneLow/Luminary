@@ -8,7 +8,7 @@ Crowd Funding Platform powered by Blockchain
 
 Created By: Apurva Shukla, Chloe Li, Low Khye Ean, Nicholas Duller
 
-#Screenshots
+# Screenshots
 ![pic1](https://i.imgur.com/3EvaCxF.jpg)
 
 ![pic2](https://i.imgur.com/9QtJiED.jpg)
