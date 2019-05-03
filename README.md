@@ -8,6 +8,12 @@ Crowd Funding Platform powered by Blockchain
 
 Created By: Apurva Shukla, Chloe Li, Low Khye Ean, Nicholas Duller
 
+# Try it out!
+1. `git clone` repo
+2. `python3 run.py`
+3. Go to localhost:4000 on your favorite browser
+*Disclaimer: This is a Minimum Viable Product, therefore you are likely to run into bugs/errors*
+
 # Screenshots
 ![pic1](https://i.imgur.com/3EvaCxF.jpg)
 
